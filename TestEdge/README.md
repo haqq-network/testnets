@@ -24,11 +24,11 @@ haqqd config chain-id haqq_53211-1 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_53211-1
 
 # Prepare genesis file for TestEdge(haqq_53211-1)
-wget -O genesis.json https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json
+curl https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json -o genesis.json
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Configure State sync
-wget -O state_sync.sh https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge/state_sync.sh
+curl https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge/state_sync.sh -o state_sync.sh
 sh state_sync.sh
 
 # Start Haqq
@@ -39,7 +39,7 @@ haqqd start --x-crisis-skip-assert-invariants
 
 Download the snapshot:
 ```sh
-wget -O haqq_149008.tar.lz4 https://storage.googleapis.com/haqq-testedge-snapshots/haqq_149008.tar.lz4
+curl hhttps://storage.googleapis.com/haqq-testedge-snapshots/haqq_149008.tar.lz4 -o haqq_149008.tar.lz4
 
 ```
 
@@ -50,7 +50,7 @@ haqqd config chain-id haqq_53211-1 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_53211-1
 
 # Prepare genesis file for TestEdge(haqq_53211-1)
-wget -O genesis.json https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json
+curl https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json -o genesis.json
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Unzip snapshot to data
