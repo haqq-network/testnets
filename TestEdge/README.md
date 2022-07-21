@@ -28,6 +28,7 @@ wget -O genesis.json https://storage.googleapis.com/haqq-testedge-snapshots/gene
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Configure State sync
+wget -O state_sync.sh https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge/state_sync.sh
 sh state_sync.sh
 
 # Start Haqq
