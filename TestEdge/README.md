@@ -39,7 +39,7 @@ haqqd start --x-crisis-skip-assert-invariants
 
 Download the snapshot:
 ```sh
-curl hhttps://storage.googleapis.com/haqq-testedge-snapshots/haqq_149008.tar.lz4 -o haqq_149008.tar.lz4
+curl https://storage.googleapis.com/haqq-testedge-snapshots/haqq_149008.tar.lz4 -o haqq_149008.tar.lz4
 
 ```
 
