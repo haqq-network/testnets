@@ -16,7 +16,7 @@ cd haqq
 make install
 ```
 
-## StateSync
+## Option 1: Run by Tendermint State Sync (preferred)
 ```sh
 CUSTOM_MONIKER="example_moniker"
 
@@ -34,7 +34,7 @@ sh state_sync.sh
 haqqd start --x-crisis-skip-assert-invariants
 ```
 
-## Run from snapshot
+## Option 2: Run from snapshot
 
 Download the snapshot:
 ```sh
