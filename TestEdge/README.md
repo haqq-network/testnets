@@ -4,7 +4,7 @@ To quickly get started, node operators can choose to sync via State Sync or by d
 
 Install packages:
 ```sh
-sudo apt-get install wget liblz4-tool -y
+sudo apt-get install curl liblz4-tool -y
 ```
 
 Download latest binary for your arch:
