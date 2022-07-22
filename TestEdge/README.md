@@ -89,7 +89,7 @@ sed -i.bak -E "s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"$SEEDS\"|" $HOME/.haqq
 haqqd start --x-crisis-skip-assert-invariants
 ```
 
-### **Option 3**: Run sync from scratch
+### **Option 3**: Run with sync from scratch
 The main problem of synchronization from scratch is that we need to consistently change the version of the binary.
 Currently we need upgrades binary by this pipepline:
 v1.0.1 -> v1.0.2 -> v1.0.3
