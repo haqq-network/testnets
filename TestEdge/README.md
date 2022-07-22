@@ -9,7 +9,7 @@ The current Haqq version of testedge is [`v1.0.3`](https://github.com/haqq-netwo
 
 Install packages:
 ```sh
-sudo apt-get install curl git make gcc liblz4-tool build-essential -y
+sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
 ```
 
 **Preresquisites for compile from source**
@@ -74,7 +74,7 @@ haqqd config chain-id haqq_53211-1 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_53211-1
 
 # Prepare genesis file for TestEdge(haqq_53211-1)
-curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json
+curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json && \
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Unzip snapshot to data
@@ -106,7 +106,7 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.0.3" 58215364d5be4c9ab2b17b2a80cf89f10f6de38a
+haqqd version "1.0.1" dfefefccac6c590b6b42fd32dfb03810467ff9dd
 ```
 
 Start from v1.0.1:
@@ -135,10 +135,9 @@ panic: UPGRADE "v1.0.2" NEEDED at height: 1143
 ```
 
 It's now time to perform the manual upgrade to `v1.0.2`:
-
 ```sh
-git checkout v1.0.2
-make install
+git checkout v1.0.2 && \
+make install && \
 haqqd start --x-crisis-skip-assert-invariants
 ```
 
@@ -148,20 +147,11 @@ panic: UPGRADE "v1.0.3" NEEDED at height: 1928
 ```
 
 It's now time to perform the manual upgrade to `v1.0.3`:
-
 ```sh
-git checkout v1.0.3
-make install
+git checkout v1.0.3 && \
+make install && \
 haqqd start --x-crisis-skip-assert-invariants
 ```
 
 ## Upgrade to Validator Node
 You now have an active full node. What's the next step? You can upgrade your full node to become a Haqq Validator. The top 100 validators have the ability to propose new blocks to the Haqq Network. Continue onto the [Validator Setup](https://docs.haqq.network/guides/validators/setup.html).
-
-
-
-
-tar cvf - $HOME/haqq_backups/haqq_$LATEST_HEIGHT/ | lz4 - $HOME/haqq_backups/haqq_$LATEST_HEIGHT.tar.lz4
-
-
-cd ~/haqq_backups/haqq_167797 && 
