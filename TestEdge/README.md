@@ -64,7 +64,7 @@ haqqd version "1.0.3" 58215364d5be4c9ab2b17b2a80cf89f10f6de38a
 
 Download the snapshot:
 ```sh
-curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/haqq_167797.tar.lz4
+curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/haqq_256222.tar.lz4
 ```
 
 ```sh
