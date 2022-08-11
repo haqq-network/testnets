@@ -64,7 +64,7 @@ haqqd version "1.0.3" 58215364d5be4c9ab2b17b2a80cf89f10f6de38a
 
 Download the snapshot:
 ```sh
-curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/haqq_256222.tar.lz4
+curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/haqq_latest.tar.lz4
 ```
 
 ```sh
@@ -78,7 +78,7 @@ curl -OL https://storage.googleapis.com/haqq-testedge-snapshots/genesis.json && 
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Unzip snapshot to data
-lz4 -c -d haqq_167797.tar.lz4 | tar -x -C $HOME/.haqqd/data
+lz4 -c -d haqq_latest.tar.lz4 | tar -x -C $HOME/.haqqd
 
 # Setup seeds
 SEEDS="8f7b0add0523ec3648cb48bc12ac35357b1a73ae@195.201.123.87:26656,899eb370da6930cf0bfe01478c82548bb7c71460@34.90.233.163:26656,f2a78c20d5bb567dd05d525b76324a45b5b7aa28@34.90.227.10:26656,4705cf12fb56d7f9eb7144937c9f1b1d8c7b6a4a@34.91.195.139:26656"
