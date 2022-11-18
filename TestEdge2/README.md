@@ -9,7 +9,7 @@ The current Haqq version of testedge2 is [`v1.2.1`](https://github.com/haqq-netw
 
 Install packages:
 ```sh
-sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
+sudo apt-get install curl git make gcc liblz4-tool build-essential jq bzip2 -y
 ```
 
 **Preresquisites for compile from source**
