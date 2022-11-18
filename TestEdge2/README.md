@@ -42,7 +42,7 @@ haqqd init CUSTOM_MONIKER --chain-id haqq_54211-3
 
 # Prepare genesis file for TestEdge(haqq_54211-3)
 curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/genesis.tar.bz2 &&\
-bzip2 -d genesis.tar.bz2 && tar -xzvf genesis.tar &&\
+bzip2 -d genesis.tar.bz2 && tar -xvf genesis.tar &&\
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Configure State sync
