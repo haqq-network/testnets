@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.2.1`](https://github.com/haqq-network/haqq/releases/tag/v1.2.1).
+The current Haqq version of testedge2 is [`v1.3.0`](https://github.com/haqq-network/haqq/releases/tag/v1.3.0).
 
 
 ## Quickstart
@@ -22,7 +22,7 @@ https://github.com/haqq-network/haqq/releases/tag/v1.2.1
 Build from source:
 ```sh
 cd $HOME
-git clone -b v1.2.1 https://github.com/haqq-network/haqq
+git clone -b v1.3.0 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -31,7 +31,7 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.2.1" 4d25b4ae8c52011a64c7279454e88c372f515673
+haqqd version "1.3.0" 39b4dcb706e72c187fc23ec6dddcfed20c79bc9d
 ```
 
 ```sh
