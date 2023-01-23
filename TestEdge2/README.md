@@ -17,7 +17,7 @@ sudo apt-get install curl git make gcc liblz4-tool build-essential jq bzip2 -y
 - `Go 1.19+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
 
 Download latest binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.2.1
+https://github.com/haqq-network/haqq/releases/tag/v1.3.0
 
 Build from source:
 ```sh
