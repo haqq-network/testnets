@@ -45,6 +45,10 @@ curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/
 bzip2 -d genesis.tar.bz2 && tar -xvf genesis.tar &&\
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
+# Prepare addrbook
+curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/addrbook.json &&\
+mv addrbook.json $HOME/.haqqd/config/addrbook.json
+
 # Configure State sync
 curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/state_sync.sh &&\
 sh state_sync.sh
