@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.3.0`](https://github.com/haqq-network/haqq/releases/tag/v1.3.0).
+The current Haqq version of testedge2 is [`v1.3.1`](https://github.com/haqq-network/haqq/releases/tag/v1.3.1).
 
 
 ## Quickstart
