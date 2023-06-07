@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.3.1`](https://github.com/haqq-network/haqq/releases/tag/v1.3.1).
+The current Haqq version of testedge2 is [`v1.4.0`](https://github.com/haqq-network/haqq/releases/tag/v1.4.0).
 
 
 ## Quickstart
@@ -31,7 +31,7 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.3.1" 877c235c1b86b0c734fb482fdebdec71bdc47b07
+haqqd version "1.4.0" 79a48917950dcc79dfd5a92510338c7030d2eacb
 ```
 
 ```sh
