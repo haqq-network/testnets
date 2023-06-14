@@ -16,10 +16,17 @@ sudo apt-get install curl git make gcc liblz4-tool build-essential jq bzip2 -y
 - `make` & `gcc` 
 - `Go 1.19+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
 
-Download latest binary for your arch: </br>
+Easy Go compiler installation:
+```sh
+bash <(curl -s https://raw.githubusercontent.com/haqq-network/mainnet/master/install_go.sh) && \
+source $HOME/.bash_profile
+```
+
+### Haqq node binary
+Download latest Haqq binary for your arch: </br>
 https://github.com/haqq-network/haqq/releases/tag/v1.4.0
 
-Build from source:
+Or build haqq binary from source:
 ```sh
 cd $HOME
 git clone -b v1.4.0 https://github.com/haqq-network/haqq
