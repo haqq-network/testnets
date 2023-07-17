@@ -62,7 +62,7 @@ curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/
 sh state_sync.sh $HAQQD_FOLDER
 
 # Start Haqq
-haqqd start --x-crisis-skip-assert-invariants
+haqqd start
 ```
 
 ## Upgrade to Validator Node
