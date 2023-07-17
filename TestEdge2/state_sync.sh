@@ -1,13 +1,20 @@
 #!/bin/bash
 
+# Check .haqqd directory provided as an argument
+if [ -z "$1" ]; then
+  echo "Usage: $0 <.haqqd_directory path>"
+  exit 1
+fi
+
+
 SNAP_RPC1="https://rpc.tm.testedge2.haqq.network:443"
 SNAP_RPC2="https://te2-s1-tm.haqq.sh:443"
 
 # Select one available SNAP_RPC
-if curl --output /dev/null --silent --head --fail "$SNAP_RPC1"; then
+if curl -Is "$SNAP_RPC1" | head -n 1 | grep "200 OK" > /dev/null; then
   echo "[INFO] SNAP_RPC1 ($SNAP_RPC1) is available and selected for requests"
   SNAP_RPC=$SNAP_RPC1
-elif curl --output /dev/null --silent --head --fail "$SNAP_RPC2"; then
+elif curl -Is "$SNAP_RPC2" | head -n 1 | grep "200 OK" > /dev/null; then
   echo "[INFO] SNAP_RPC2 ($SNAP_RPC2) is available and selected for requests"
   SNAP_RPC=$SNAP_RPC2
 else
@@ -28,7 +35,7 @@ echo "[INFO] Trust hash: $TRUST_HASH"
 P_PEERS=""
 
 # seed nodes
-SEEDS="62bf004201a90ce00df6f69390378c3d90f6dd7e@seed2.testedge2.haqq.network:26656,23a1176c9911eac442d6d1bf15f92eeabb3981d5@seed1.testedge2.haqq.network:26656,96cd4df06277f3353fa2da1f73d8e21663183c3f@91.107.192.98:26656"
+SEEDS="528b6b7ff4c6ee0ead71246905a07aadf0fcbd28@testedge2.haqq-sync.rpc.p2p.world:26656,62bf004201a90ce00df6f69390378c3d90f6dd7e@seed2.testedge2.haqq.network:26656,23a1176c9911eac442d6d1bf15f92eeabb3981d5@seed1.testedge2.haqq.network:26656,96cd4df06277f3353fa2da1f73d8e21663183c3f@91.107.192.98:26656"
 
 echo "[INFO] Starting configuration changes..."
 
@@ -37,6 +44,6 @@ s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC1,$SNAP_RPC2\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
 s|^(persistent_peers[[:space:]]+=[[:space:]]+).*$|\1\"$P_PEERS\"| ; \
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"$SEEDS\"|" $HOME/.haqqd/config/config.toml
+s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"$SEEDS\"|" $1/config/config.toml
 
 echo "[SUCCESS] StateSync configuration completed."
