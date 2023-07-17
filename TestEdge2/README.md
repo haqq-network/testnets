@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.4.0`](https://github.com/haqq-network/haqq/releases/tag/v1.4.0).
+The current Haqq version of testedge2 is [`v1.4.1`](https://github.com/haqq-network/haqq/releases/tag/v1.4.1).
 
 
 ## Quickstart
@@ -24,12 +24,12 @@ source $HOME/.bash_profile
 
 ### Haqq node binary
 Download latest Haqq binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.4.0
+https://github.com/haqq-network/haqq/releases/tag/v1.4.1
 
 Or build haqq binary from source:
 ```sh
 cd $HOME
-git clone -b v1.4.0 https://github.com/haqq-network/haqq
+git clone -b v1.4.1 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -38,11 +38,12 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.4.0" 4f16bbfc188b66ae44b559453c43bff78f85b6d4
+haqqd version "1.4.1" ef7b345e2b17f2dfddecf1aa8d65f9c989e50342
 ```
 
 ```sh
-CUSTOM_MONIKER="haqq_node_testedge2"
+export CUSTOM_MONIKER="haqq_node_testedge2"
+export HAQQD_FOLDER="$HOME/.haqqd"
 
 haqqd config chain-id haqq_54211-3 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_54211-3
@@ -50,19 +51,19 @@ haqqd init CUSTOM_MONIKER --chain-id haqq_54211-3
 # Prepare genesis file for TestEdge(haqq_54211-3)
 curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/genesis.tar.bz2 &&\
 bzip2 -d genesis.tar.bz2 && tar -xvf genesis.tar &&\
-mv genesis.json $HOME/.haqqd/config/genesis.json
+mv genesis.json $HAQQD_FOLDER/config/genesis.json
 
 # Prepare addrbook
 curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/addrbook.json &&\
-mv addrbook.json $HOME/.haqqd/config/addrbook.json
+mv addrbook.json $HAQQD_FOLDER/config/addrbook.json
 
 # Configure State sync
 curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/state_sync.sh &&\
-sh state_sync.sh
+sh state_sync.sh $HAQQD_FOLDER
 
 # Start Haqq
 haqqd start --x-crisis-skip-assert-invariants
 ```
 
 ## Upgrade to Validator Node
-You now have an active full node. What's the next step? You can upgrade your full node to become a Haqq Validator. The top 150 validators have the ability to propose new blocks to the Haqq Network. Continue onto the [Validator Setup](https://docs.haqq.network/guides/validators/setup.html).
+You now have an active full node. What's the next step? You can upgrade your full node to become a Haqq Validator. Continue onto the [Validator Setup](https://docs.haqq.network/guides/validators/setup.html).
