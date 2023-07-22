@@ -65,5 +65,48 @@ sh state_sync.sh $HAQQD_FOLDER
 haqqd start
 ```
 
+### Run with Docker
+
+```
+### ENV’s and storage folder
+export CUSTOM_MONIKER="testnet_seed_node"
+export HAQQD_DIR="$HOME/haqqd_test"
+export HAQQD_VERSION="v1.4.1"
+mkdir $HAQQD_DIR && chmod 777 $HAQQD_DIR
+
+### Check
+docker run -it --rm \
+-v $HAQQD_DIR:/home/haqq/.haqqd \
+alhaqq/haqq:$HAQQD_VERSION \
+haqqd -v
+
+### Init
+docker run -it --rm \
+-v $HAQQD_DIR:/home/haqq/.haqqd \
+alhaqq/haqq:$HAQQD_VERSION \
+haqqd config chain-id haqq_54211-3
+
+docker run -it --rm \
+-v $HAQQD_DIR:/home/haqq/.haqqd \
+alhaqq/haqq:$HAQQD_VERSION \
+haqqd init $CUSTOM_MONIKER --chain-id haqq_54211-3
+
+### Setup
+curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/genesis.tar.bz2 &&\
+bzip2 -d genesis.tar.bz2 && tar -xvf genesis.tar &&\
+mv genesis.json $HAQQD_DIR/config/genesis.json &&\ 
+curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/addrbook.json &&\
+mv addrbook.json $HAQQD_DIR/config/addrbook.json && \
+curl -OL https://raw.githubusercontent.com/haqq-network/testnets/main/TestEdge2/state_sync.sh &&\
+sh state_sync.sh $HAQQD_DIR
+
+### Start
+docker run -it \
+--network host \
+-v $HAQQD_DIR:/home/haqq/.haqqd \
+alhaqq/haqq:$HAQQD_VERSION \
+haqqd start
+```
+
 ## Upgrade to Validator Node
 You now have an active full node. What's the next step? You can upgrade your full node to become a Haqq Validator. Continue onto the [Validator Setup](https://docs.haqq.network/guides/validators/setup.html).
