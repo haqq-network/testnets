@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.6.0`](https://github.com/haqq-network/haqq/releases/tag/v1.6.0).
+The current Haqq version of testedge2 is [`v1.6.4`](https://github.com/haqq-network/haqq/releases/tag/v1.6.4).
 
 
 ## Quickstart
@@ -24,12 +24,12 @@ source $HOME/.bash_profile
 
 ### Haqq node binary
 Download latest Haqq binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.6.0
+https://github.com/haqq-network/haqq/releases/tag/v1.6.4
 
 Or build haqq binary from source:
 ```sh
 cd $HOME
-git clone -b v1.6.0 https://github.com/haqq-network/haqq
+git clone -b v1.6.4 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -38,7 +38,7 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.6.0" e87024c28f935cd84e142cca16620c4f1ca681e1
+haqqd version "1.6.4" 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
 ```
 
 ```sh
