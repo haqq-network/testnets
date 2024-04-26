@@ -2,7 +2,7 @@
 
 ## Overview
 
-The current Haqq version of testedge2 is [`v1.7.3`](https://github.com/haqq-network/haqq/releases/tag/v1.7.3).
+The current Haqq version of testedge2 is [`v1.7.4`](https://github.com/haqq-network/haqq/releases/tag/v1.7.3).
 
 
 ## Quickstart
@@ -14,7 +14,7 @@ sudo apt-get install curl git make gcc liblz4-tool build-essential jq bzip2 -y
 
 **Preresquisites for compile from source**
 - `make` & `gcc` 
-- `Go 1.20+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
+- `Go 1.21+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
 
 Easy Go compiler installation:
 ```sh
@@ -24,12 +24,12 @@ source $HOME/.bash_profile
 
 ### Haqq node binary
 Download latest Haqq binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.7.3
+https://github.com/haqq-network/haqq/releases/tag/v1.7.4
 
 Or build haqq binary from source:
 ```sh
 cd $HOME
-git clone -b v1.7.3 https://github.com/haqq-network/haqq
+git clone -b v1.7.4 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -38,7 +38,7 @@ make install
 Check binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.7.3" 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
+haqqd version "1.7.3" b531ad3a9d86df47f28e5e6da133cea5c66a8d03
 ```
 
 ```sh
@@ -71,7 +71,7 @@ haqqd start
 ### ENV’s and storage folder
 export CUSTOM_MONIKER="testnet_seed_node"
 export HAQQD_DIR="$HOME/haqqd_test"
-export HAQQD_VERSION="v1.6.0"
+export HAQQD_VERSION="v1.7.4"
 mkdir $HAQQD_DIR && chmod 777 $HAQQD_DIR
 
 ### Check
